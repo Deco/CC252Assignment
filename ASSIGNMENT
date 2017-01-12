@@ -1,0 +1,45 @@
+compile = "assignment.c"
+
+//bandwidth = 56Kbps,
+//messagerate = 1000ms,
+//propagationdelay = 1000ms,
+bandwidth = 5600Kbps,
+messagerate = 1000ms,
+propagationdelay = 1500ms,
+mapimage = "dot.gif"
+
+host Amberly {
+    os="hurd"
+    x=50,y=50
+    link to Curtin { }
+    link to Tindal { }
+}
+
+host Curtin {
+    os="bsd"
+    x=150,y=50
+    link to Amberly { }
+    link to Tindal { }
+}
+
+host Tindal {
+    os="mac"
+    x=50,y=150
+    link to Amberly { }
+    link to Curtin { }
+    link to Learmonth { }
+}
+
+host Learmonth {
+    os="os2"
+    x=150,y=150
+    link to Tindal { }
+    link to Pearce { }
+}
+
+host Pearce {
+    os="next"
+    x=250,y=150
+    link to Learmonth { }
+}
+
